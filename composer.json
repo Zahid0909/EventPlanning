@@ -35,11 +35,10 @@
         }
     },
     "scripts": {
-        # The below code helps to wipe the database, re-migrate it and seed it after an update or a change done to the database.
         "refresh" : [
             "@php artisan db:wipe",
             "@php artisan migrate",
-            "@php artisan db:seed"],
+            "@php artisan db:seed"],
 
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
