@@ -81,7 +81,7 @@
                 <p class="text-gray-600">
                     Reserve Event
                 <p>
-                    <a href="{{ route('event.show', 1) }}">
+                    <a href="{{ route('event.reservation', 1) }}">
                         <button class="w-full rounded-md bg-indigo-600 py-2 text-indigo-100 hover:bg-indigo-500 hover:shadow-md duration-75">Reserve</button>
                     </a>
                 </p>
