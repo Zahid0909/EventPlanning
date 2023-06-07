@@ -25,6 +25,12 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'phone' => 'required|string|max:20',
+            'address' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+            'state' => 'required|string|max:255',
+            'zip_code' => 'required|string|max:255',
+            'country' => 'required|string|max:255',
+
 
         ])->validateWithBag('updateProfileInformation');
 
@@ -42,6 +48,13 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'first_name' => $input['first_name'],
                 'last_name' => $input['last_name'],
                 'phone' => $input['phone'],
+                'address' => $input['address'],
+                'city' => $input['city'],
+                'state' => $input['state'],
+                'zip_code' => $input['zip_code'],
+                'country' => $input['country'],
+
+
             ])->save();
         }
     }
@@ -60,6 +73,11 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'first_name' => $input['first_name'],
             'last_name' => $input['last_name'],
             'phone' => $input['phone'],
+            'address' => $input['address'],
+            'city' => $input['city'],
+            'state' => $input['state'],
+            'zip_code' => $input['zip_code'],
+            'country' => $input['country'],
 
         ])->save();
 
