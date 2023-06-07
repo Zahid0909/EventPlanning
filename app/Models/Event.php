@@ -15,6 +15,7 @@ class Event extends Model implements HasMedia
 
     protected $fillable = [
 
+        'image',
         'date',
         'time',
         'event_name',
