@@ -112,29 +112,30 @@
 
                             <x-slot name="content">
 
-                                <!-- Adminstration -->
-                                <div class="block px-4 py-2 text-xs text-gray-400">
-                                    {{ __('Adminstration') }}
-                                </div>
+                                @can('accessAdministration')
+                                    <!-- Administration -->
+                                    <div class="block px-4 py-2 text-xs text-gray-400">
+                                        {{ __('Administration') }}
+                                    </div>
 
-                                <x-dropdown-link href="{{ route('admin.event.index') }}">
-                                    {{ __('Events') }}
-                                </x-dropdown-link>
+                                    <x-dropdown-link href="{{ route('admin.event.index') }}">
+                                        {{ __('Events') }}
+                                    </x-dropdown-link>
 
-                                <x-dropdown-link href="{{ route('admin.category.index') }}">
-                                    {{ __('Categories') }}
-                                </x-dropdown-link>
+                                    <x-dropdown-link href="{{ route('admin.category.index') }}">
+                                        {{ __('Categories') }}
+                                    </x-dropdown-link>
 
-                                <x-dropdown-link href="{{ route('admin.reservation.index') }}">
-                                    {{ __('Reservations') }}
-                                </x-dropdown-link>
+                                    <x-dropdown-link href="{{ route('admin.reservation.index') }}">
+                                        {{ __('Reservations') }}
+                                    </x-dropdown-link>
 
-                                <x-dropdown-link href="{{ route('admin.users.index') }}">
-                                    {{ __('Users') }}
-                                </x-dropdown-link>
+                                    <x-dropdown-link href="{{ route('admin.users.index') }}">
+                                        {{ __('Users') }}
+                                    </x-dropdown-link>
 
-                                <div class="border-t border-gray-200"></div>
-
+                                    <div class="border-t border-gray-200"></div>
+                                @endcan
                                 <!-- Account Management -->
                                 <div class="block px-4 py-2 text-xs text-gray-400">
                                     {{ __('Manage Account') }}
