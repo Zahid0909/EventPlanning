@@ -38,6 +38,11 @@ class User extends Authenticatable implements HasMedia
         'number_of_tickets',
         'email',
         'phone',
+        'address',
+        'city',
+        'state',
+        'country',
+        'zip_code',
 
         //Payment
         'card_number',

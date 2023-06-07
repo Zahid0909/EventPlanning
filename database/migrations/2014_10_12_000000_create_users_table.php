@@ -25,6 +25,10 @@ return new class extends Migration
             $table->string('last_name')->nullable();
             $table->integer('number_of_tickets')->nullable();
             $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('country')->nullable();
 
             //Payment
             $table->string('card_number')->nullable();

@@ -52,15 +52,32 @@
             </div>
         @endif
 
+        <!-- First Name -->
+        <div class="col-span-3">
+            <x-label for="first_name" value="{{ __('First Name') }}" />
+            <x-input id="first_name" type="text" class="mt-1 block w-full"
+             wire:model.defer="state.first_name" autocomplete="name" />
+            <x-input-error for="first_name" class="mt-2" />
+        </div>
+
+        <!-- Last Name -->
+        <div class="col-span-3">
+            <x-label for="last_name" value="{{ __('Last Name') }}" />
+            <x-input id="last_name" type="text" class="mt-1 block w-full"
+            wire:model.defer="state.last_name" autocomplete="name" />
+            <x-input-error for="last_name" class="mt-2" />
+        </div>
+
         <!-- Name -->
-        <div class="col-span-6 sm:col-span-4">
-            <x-label for="name" value="{{ __('Name') }}" />
-            <x-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
+        <div class="col-span-6">
+            <x-label for="name" value="{{ __('Full Name') }}" />
+            <x-input id="name" type="text" class="mt-1 block w-full"
+             wire:model.defer="state.name" autocomplete="name" />
             <x-input-error for="name" class="mt-2" />
         </div>
 
         <!-- Email -->
-        <div class="col-span-6 sm:col-span-4">
+        <div class="col-span-3">
             <x-label for="email" value="{{ __('Email') }}" />
             <x-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" autocomplete="username" />
             <x-input-error for="email" class="mt-2" />
@@ -80,6 +97,58 @@
                     </p>
                 @endif
             @endif
+        </div>
+
+        <!-- Phone -->
+        <div class="col-span-3 sm:">
+            <x-label for="phone" value="{{ __('Phone') }}" />
+            <x-input id="phone" type="text" class="mt-1 block w-full"
+            wire:model.defer="state.phone" autocomplete="name" />
+            <x-input-error for="phone" class="mt-2" />
+        </div>
+
+        <div class="py-2 col-span-6">
+            <div class="border-t border-gray-200"></div>
+        </div>
+
+        <!-- Address -->
+        <div class="col-span-6">
+            <x-label for="address" value="{{ __('Address') }}" />
+            <x-textarea id="address" class="mt-1 block w-full"
+            wire:model.defer="state.address" autocomplete="address" />
+            <x-input-error for="address" class="mt-2" />
+        </div>
+
+        <!-- City -->
+        <div class="col-span-3">
+            <x-label for="city" value="{{ __('City') }}" />
+            <x-input id="city" type="text" class="mt-1 block w-full"
+            wire:model.defer="state.city" autocomplete="name" />
+            <x-input-error for="city" class="mt-2" />
+        </div>
+
+        <!-- State/Province -->
+        <div class="col-span-3">
+            <x-label for="state" value="{{ __('State/Province') }}" />
+            <x-input id="state" type="text" class="mt-1 block w-full"
+            wire:model.defer="state.state" autocomplete="name" />
+            <x-input-error for="state" class="mt-2" />
+        </div>
+
+        <!-- Zip/Postal Code -->
+        <div class="col-span-2">
+            <x-label for="zip_code" value="{{ __('Zip/Postal Code') }}" />
+            <x-input id="zip_code" type="text" class="mt-1 block w-full"
+            wire:model.defer="state.zip_code" autocomplete="name" />
+            <x-input-error for="zip_code" class="mt-2" />
+        </div>
+
+        <!-- Country -->
+        <div class="col-span-4">
+            <x-label for="country" value="{{ __('Country') }}" />
+            <x-input-country id="country" type="text" class="mt-1 block w-full"
+            wire:model.defer="state.country" autocomplete="name" />
+            <x-input-error for="country" class="mt-2" />
         </div>
     </x-slot>
 
