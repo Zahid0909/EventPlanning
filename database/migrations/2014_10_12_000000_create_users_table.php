@@ -15,6 +15,25 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+
+            $table
+                ->tinyInteger('role')
+                ->default(App\Enum\UserRole::User->value);
+
+            //Profile
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->integer('number_of_tickets')->nullable();
+            $table->date('date')->nullable();
+            $table->time('time')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+
+            //Payment
+            $table->string('card_number')->nullable();
+            $table->string('expiry_date')->nullable();
+            $table->string('cvv')->nullable();
+
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

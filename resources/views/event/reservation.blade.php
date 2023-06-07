@@ -30,7 +30,7 @@
                               <input
                                 type="text"
                                 name="fName"
-                                id="fName"
+                                id="first_name"
                                 placeholder="First Name"
                                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                               />
@@ -47,7 +47,7 @@
                               <input
                                 type="text"
                                 name="lName"
-                                id="lName"
+                                id="last_name"
                                 placeholder="Last Name"
                                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                               />
@@ -65,7 +65,7 @@
                             <input
                               type="number"
                               name="tickets"
-                              id="ticket"
+                              id="number_of_tickets"
                               placeholder="5"
                               min="0"
                               class="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
@@ -120,76 +120,22 @@
                               placeholder="user@gmail.com"
                               class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                             />
-                            <div class="mb-5">
-                                <label
-                                  for="country"
-                                  class="mb-3 block text-base font-medium text-[#07074D]"
-                                >
-                                  Country
-                                </label>
-                                <input
-                                  type="text"
-                                  name="country"
-                                  id="country"
-                                  placeholder="Sri Lanka"
-                                  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
                             </div>
                             <div class="mb-5">
                                 <label
-                                  for="streetAddress"
+                                  for="phone
                                   class="mb-3 block text-base font-medium text-[#07074D]"
                                 >
-                                  Street Address
+                                  Phone
                                 </label>
                                 <input
                                   type="text"
-                                  name="streetAddress"
-                                  id="streetAddress"
-                                  placeholder="No. 123, Galle Road, Colombo 03"
-                                  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
-                            </div>
-                            <div class="mb-5">
-                                <label
-                                  for="city"
-                                  class="mb-3 block text-base font-medium text-[#07074D]"
-                                >
-                                  City
-                                </label>
-                                <input
-                                  type="text"
-                                  name="city"
-                                  id="city"
-                                  placeholder="Colombo 03"
-                                  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
-                            </div>
-                            <div class="mb-5">
-                                <label
-                                  for="state"
-                                  class="mb-3 block text-base font-medium text-[#07074D]"
-                                >
-                                State/Province
-                                </label>
-                                <input
-                                  type="text"
-                                  name="state"
-                                  id="state"
-                                  placeholder="Western Province"
-                                  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
-                            </div>
-                            <div class="mb-5">
-                                <label
-                                  for="zip_code"
-                                  class="mb-3 block text-base font-medium text-[#07074D]"
-                                >
-                                ZIP/Postal Code
-                                </label>
-                                <input
-                                  type="text"
-                                  name="zip_code"
-                                  id="zip_code"
-                                  placeholder="00300"
-                                  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
-                            </div>
+                                  name="phone"
+                                  id="phone"
+                                  placeholder="012-3456789"
+                                  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                />
+                                </div>
                             <br>
                             <center><h1 class="text-base font-semibold leading-7 text-gray-900">Payment Information</h1></center>
                             <br>
@@ -203,7 +149,7 @@
                                 <input
                                   type="text"
                                   name="cardNumber"
-                                  id="cardNumber"
+                                  id="card_number"
                                   placeholder="1234 1234 1234 1234"
                                   class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
                             </div>
@@ -217,7 +163,7 @@
                                 <input
                                   type="text"
                                   name="expireDate"
-                                  id="expireDate"
+                                  id="expiry_date"
                                   placeholder="MM/YY"
                                   class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                 />
@@ -232,7 +178,7 @@
                                 <input
                                   type="text"
                                   name="cvc"
-                                  id="cvc"
+                                  id="cvv"
                                   placeholder="123"
                                   class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                 />
