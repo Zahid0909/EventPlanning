@@ -27,18 +27,17 @@
               </div>
             </div>
             <div class="p-6 border-b">
-
                 <h2 class="text-2xl ">
                     Information
                 </h2>
                 <p class="text-sm text-gray-500">
                     Event details.
-                </p>
+                    </p>
             </div>
-        <div>
+            <div>
             <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
                 <p class="text-gray-600">
-                    Full Name
+                    Event Name
                 </p>
                 <p>
                     Jane Doe

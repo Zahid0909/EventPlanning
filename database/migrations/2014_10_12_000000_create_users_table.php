@@ -24,8 +24,6 @@ return new class extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->integer('number_of_tickets')->nullable();
-            $table->date('date')->nullable();
-            $table->time('time')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
 

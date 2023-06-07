@@ -12,4 +12,9 @@ class Category extends Model implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
+
+    protected $fillable = [
+        'name',
+        'description',
+    ];
 }
