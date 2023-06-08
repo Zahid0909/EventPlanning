@@ -10,15 +10,11 @@
 
             <div class="grid grid-cols-4 gap-6">
 
-               @livewire('event-card')
-
-               @livewire('event-card')
-
-               @livewire('event-card')
-
-               @livewire('event-card')
-
-
+                @foreach ($events as $event )
+                @livewire('event-card',[
+                    'event' => $event,
+                ])
+                @endforeach
             </div>
 
         </div>

@@ -1,6 +1,12 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\EventController as EventController;
+
+use App\Http\Controllers\Admin\EventController as AdminEventController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,31 +23,30 @@ Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
-    'role:Admin',
+    'role:admin'
 ])
 
 ->prefix('admin')
+->name('admin.')
 ->group(function () {
 
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/events', function () {
-        return view('admin.event.index');
-    })->name('admin.event.index');
+    Route::resource('/events', AdminEventController::class);
 
     Route::get('/categories', function () {
         return view('admin.category.index');
-    })->name('admin.category.index');
+    })->name('category.index');
 
     Route::get('/reservations', function () {
         return view('admin.reservation.index');
-    })->name('admin.reservation.index');
+    })->name('reservation.index');
 
     Route::get('/users', function () {
         return view('admin.users.index');
-    })->name('admin.users.index');
+    })->name('users.index');
 });
 
 
@@ -60,6 +65,4 @@ Route::get('reserve/{id}', function ($id) {
     ]);
 })->name('event.reservation');
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', HomeController::class)->name('home');

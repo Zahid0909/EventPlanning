@@ -20,7 +20,8 @@ return new class extends Migration
                 ->onDelete('cascade');
 
             $table->string('event_name');
-            $table->string('location')->nullable();
+            $table->string('venue');
+            $table->string('address');
             $table->date('date');
             $table->time('time');
             $table->text('description');
@@ -29,6 +30,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('website')->nullable();
             $table->string('image')->nullable();
+            $table->string('category')->nullable();
 
 
             $table->timestamps();

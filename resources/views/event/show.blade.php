@@ -13,14 +13,12 @@
               </div>
             <div class="flex flex-col w-full md:flex-row border-b">
               <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
-                <div class="md:text-3xl">Jan</div>
-                <div class="md:text-6xl">13</div>
-                <div class="md:text-xl">6 pm - 10 pm</div>
+                <div class="md:date-3xl">{{ $event->date }}</div>
+                <div class="md:time-xl">{{ $event->time }}</div>
               </div>
               <div class="p-4 font-normal text-gray-800 md:w-3/4">
                 <br><br><br>
-                <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">Ignite Your Potential: Unleashing the Power Within</h1>
-                <br>
+                <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">{{ $event->event_name }}</h1>
                 <div class="flex flex-row items-center mt-4 text-gray-700">
                     <br>
                 </div>
@@ -35,45 +33,59 @@
                     </p>
             </div>
             <div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
+            <div
+                class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
                 <p class="text-gray-600">
                     Event Name
                 </p>
                 <p>
-                    Jane Doe
+                    {{ $event->event_name }}
                 </p>
             </div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
+            <div
+                class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
                 <p class="text-gray-600">
-                    Location
+                    Venue
                 </p>
                 <p>
-                    Port City
+                    {{ $event->venue }}
                 </p>
             </div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
+
+            <div
+                class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
+                <p class="text-gray-600">
+                    Address
+                </p>
+
+                    {{ $event->address }}
+                </p>
+            </div>
+            <div
+                class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
                 <p class="text-gray-600">
                     Category
                 </p>
                 <p>
-                    Concert
+                    {{ $event->category }}
                 </p>
             </div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
+            <div
+                class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
                 <p class="text-gray-600">
                     Description
                 </p>
                 <p>
-                    Join us for a transformative experience at "Ignite Your Potential: Unleashing the Power Within." This one-day event is designed to empower individuals from all walks of life to discover their true potential and ignite their personal and professional growth.
+                    {{ $event->description }}
                 </p>
-
             </div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
+            <div
+                class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
                 <p class="text-gray-600">
-                    Price Per Ticket
+                    Price per Ticket
                 </p>
                 <p>
-                    Rs. 15,000 /=
+                    {{ $event->price_per_ticket }}
                 </p>
             </div>
             <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">

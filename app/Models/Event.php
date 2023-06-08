@@ -19,13 +19,26 @@ class Event extends Model implements HasMedia
         'date',
         'time',
         'event_name',
-        'location',
+        'venue',
+        'address',
         'category_id',
         'description',
         'price_per_ticket',
         'phone',
         'email',
-        'website',
+
 
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    // public function registerMediaConversions(?Media $media = null): void
+    // {
+    //     $this->addMediaConversion('thumb')
+    //         ->width(368)
+    //         ->height(232);
+    // }
 }
