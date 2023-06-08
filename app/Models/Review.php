@@ -18,7 +18,7 @@ class Review extends Model
         'user_id',
         'rating',
         'title',
-        'comment'
+        'comment',
     ];
 
     protected $casts = [
@@ -33,5 +33,6 @@ class Review extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+
     }
 }
