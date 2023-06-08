@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
+
 class EventForm extends Component
 {
 
@@ -15,6 +16,8 @@ class EventForm extends Component
     public $categories;
 
     public $image;
+
+
 
 
     protected $rules = [
@@ -40,7 +43,6 @@ class EventForm extends Component
         $this->validate();
 
         $this->event->save();
-
 
         // check if there is an image
         //if so, add it to the event

@@ -6,14 +6,14 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="mx-auto sm:px-6 lg:px-4">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-
+        <div class="mx-auto sm:px-6 lg:px-0">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-10">
                 <div class="flex justify-center mr-5 mt-8 mb-5">
                     <a href="{{ route('admin.events.create') }}"
                         class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2">Create New
                         Event</a>
                 </div>
+
 
                 <x-table class="flex justify-start">
                     <x-slot name="head">
@@ -53,7 +53,10 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"
-                                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-24">Delete</button>
+                                                onclick="return confirm('Are you sure you want to delete this event?')"
+                                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-24">
+                                                Delete
+                                            </button>
                                         </form>
                                     </div>
                                 </x-td>

@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('website')->nullable();
             $table->string('image')->nullable();
-            $table->string('category')->nullable();
+            $table->string('category_name')->nullable();
 
 
             $table->timestamps();

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Butter Cup Events') }}
+            {{ $event->event_name }}
         </h2>
     </x-slot>
 
@@ -9,15 +9,15 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 relative">
           <div class="flex flex-col w-full bg-white rounded shadow-lg sm:w-6/4 md:w-3/2 lg:w-6/5">
             <div class="w-full h-90 bg-top bg-cover rounded-t">
-                <img src="https://th.bing.com/th/id/R.f10a43e665a6028ac2b0fb9b68aef0cd?rik=0PvHtvQTB1QBqA&riu=http%3a%2f%2fwww.tourismsaskatchewan.com%2f-%2fmedia%2fthings-to-do%2fevents%2fsasktel-centre-concert-events.ashx&ehk=iCldjfMI5HjnilU3Jo%2fI%2brWR6k45upM0RmThXL8%2fWPc%3d&risl=&pid=ImgRaw&r=0" alt="Image" class="w-full h-full object-cover">
+                <img src="{{ $event->getFirstMediaUrl('image') }}" class="w-full" >
               </div>
-            <div class="flex flex-col w-full md:flex-row border-b">
-              <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
-                <div class="md:date-3xl">{{ $event->date }}</div>
-                <div class="md:time-xl">{{ $event->time }}</div>
-              </div>
+              <div class="flex flex-col w-full md:flex-row border-b">
+                <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
+                    <div class="md:text-3xl">{{ $event->date }}</div> <!-- Added md:text-3xl for bigger font size -->
+                    <div class="md:text-xl">{{ $event->time }}</div> <!-- Added md:text-xl for bigger font size -->
+                </div>
               <div class="p-4 font-normal text-gray-800 md:w-3/4">
-                <br><br><br>
+                <br><br>
                 <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">{{ $event->event_name }}</h1>
                 <div class="flex flex-row items-center mt-4 text-gray-700">
                     <br>
@@ -57,7 +57,7 @@
                 <p class="text-gray-600">
                     Address
                 </p>
-
+                <p>
                     {{ $event->address }}
                 </p>
             </div>
@@ -67,9 +67,22 @@
                     Category
                 </p>
                 <p>
-                    {{ $event->category }}
+                    {{ $event->category_id}}
                 </p>
             </div>
+
+            {{-- <div
+                class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
+                <p class="text-gray-600">
+                    Tag
+                </p>
+                @foreach ($config->categories as $category)
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                        {{ $category}}
+                    </span>
+                @endforeach
+            </div> --}}
+
             <div
                 class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
                 <p class="text-gray-600">
@@ -92,7 +105,7 @@
                 <p class="text-gray-600">
                     Reserve Event
                 <p>
-                    <a href="{{ route('event.reservation', 1) }}">
+                    <a href="{{ route('event.reservation', $event->id) }}">
                         <button class="w-full rounded-md bg-indigo-600 py-2 text-indigo-100 hover:bg-indigo-500 hover:shadow-md duration-75">Reserve</button>
                     </a>
                 </p>

@@ -34,7 +34,9 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('/events', AdminEventController::class);
+    Route::resource('/events', AdminEventController::class)->only([
+        'index', 'create', 'edit', 'destroy'
+    ]);
 
     Route::get('/categories', function () {
         return view('admin.category.index');
@@ -51,18 +53,13 @@ Route::middleware([
 
 
 
-Route::get('event/{id}', function ($id) {
-    return view('event.show', [
-        'event' => $id
-    ]);
-})
-//->where('id', '[0-9]+')
-->name('event.show');
+Route::get('events', [EventController::class, 'index'])
+    ->name('event.index');
 
-Route::get('reserve/{id}', function ($id) {
-    return view('event.reservation', [
-        'reserve' => $id
-    ]);
-})->name('event.reservation');
+Route::get('event/{event}', [EventController::class, 'show'])
+    ->name('event.show');
+
+Route::get('reserve/{event}',[EventController::class, 'reservation'] )
+    ->name('event.reservation');
 
 Route::get('/', HomeController::class)->name('home');

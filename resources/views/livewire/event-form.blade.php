@@ -23,6 +23,7 @@
                 <x-input-error for="category_id" class="mt-2" />
             </div>
 
+
             <div class="col-span-2 sm:col-span-3">
                     <x-label for="event_name" :value="__('Event Name')" />
                     <x-input id="event_name" type="text" class="block mt-1 w-full" wire:model="event.event_name"/>

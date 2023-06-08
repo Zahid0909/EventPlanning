@@ -8,6 +8,7 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
 
+
 class Event extends Model implements HasMedia
 {
     use HasFactory;
@@ -22,6 +23,7 @@ class Event extends Model implements HasMedia
         'venue',
         'address',
         'category_id',
+        'category_name',
         'description',
         'price_per_ticket',
         'phone',
@@ -33,6 +35,13 @@ class Event extends Model implements HasMedia
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    //regirster the media collection as image
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('image')
+            ->singleFile();
     }
 
     // public function registerMediaConversions(?Media $media = null): void
