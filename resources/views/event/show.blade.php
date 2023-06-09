@@ -7,6 +7,15 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 relative">
+            @if (session('message'))
+            <script>
+                Swal.fire(
+                'Thank You!',
+                '{{ session('message') }}',
+                'success'
+                )
+            </script>
+            @endif
           <div class="flex flex-col w-full bg-white rounded shadow-lg sm:w-6/4 md:w-3/2 lg:w-6/5">
             <div class="w-full h-90 bg-top bg-cover rounded-t">
                 <img src="{{ $event->getFirstMediaUrl('image') }}" class="w-full" >
@@ -67,21 +76,9 @@
                     Category
                 </p>
                 <p>
-                    {{ $event->category_id}}
+                    {{ $event->category->name}}
                 </p>
             </div>
-
-            {{-- <div
-                class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
-                <p class="text-gray-600">
-                    Tag
-                </p>
-                @foreach ($config->categories as $category)
-                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                        {{ $category}}
-                    </span>
-                @endforeach
-            </div> --}}
 
             <div
                 class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
@@ -118,9 +115,20 @@
                     ['event' => $event,
                     ])
 
-                    @livewire('create-event-review',
-                    ['event' => $event,
-                    ])
+                    @auth
+                        @livewire('create-event-review',
+                        ['event' => $event,
+                        ])
+                    @endauth
+
+                    @guest
+                        <div class="flex justify-center pt-10 pb-10" >
+                            <a href="{{ route('login') }}">
+                                <button class="w-60 rounded-md bg-green-500 py-2 text-white-100 hover:bg-white-500 hover:shadow-md duration-75">Login to leave a review</button>
+                            </a>
+                        </div>
+                    @endguest
+
                 </div>
             </div>
         </div>

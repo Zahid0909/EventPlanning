@@ -13,6 +13,19 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('event_id')->constrained()->onDelete('cascade');
+
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email');
+            $table->string('phone_number');
+            $table->integer('number_of_tickets');
+
+            $table->string('card_number');
+            $table->string('expiry_date');
+            $table->string('cvv');
+
             $table->timestamps();
         });
     }

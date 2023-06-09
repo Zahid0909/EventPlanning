@@ -14,16 +14,15 @@ class EventController extends Controller
 
     public function show(Event $event)
     {
-        debug($event);
         return view('event.show', [
             'event' => $event
         ]);
     }
 
-    public function reservation($id)
+    public function reservation(Event $event)
     {
         return view('event.reservation', [
-            'reserve' => $id
+            'event' => $event
         ]);
     }
 }
