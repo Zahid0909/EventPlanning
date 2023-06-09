@@ -4,10 +4,12 @@ use App\Http\Controllers\Admin\AdminReservationController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\EventController as EventController;
-
 use App\Http\Controllers\Admin\EventController as AdminEventController;
+
 use App\Http\Controllers\HomeController;
 
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\CategoryController as CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,11 +20,7 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/dev', function () {
 
-
-    return true;
-});
 
 Route::middleware([
     'auth:sanctum',
@@ -43,16 +41,16 @@ Route::middleware([
         'index', 'create', 'edit', 'destroy'
     ]);
 
-    Route::get('/categories', function () {
-        return view('admin.category.index');
-    })->name('category.index');
+    Route::resource('/category', AdminCategoryController::class)->only([
+        'index', 'create', 'edit', 'destroy'
+    ]);
 
     Route::get('/reservations', [AdminReservationController::class, 'index'
     ])->name('reservation.index');
 
-    Route::get('/users', function () {
-        return view('admin.users.index');
-    })->name('users.index');
+    Route::get('/users', [App\Http\Controllers\Admin\UserController::class, 'index'
+    ])->name('users.index');
+
 });
 
 

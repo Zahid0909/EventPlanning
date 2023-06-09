@@ -2,8 +2,6 @@
     <form wire:submit.prevent="submit" class="p-5">
         <div class="grid grid-cols-6 gap-4">
 
-
-
             <div class="col-span-2 sm:col-span-6">
                 <x-label for="image" :value="__('Image')" />
                 <x-input id="image" type="file" class="block mt-1 w-full" wire:model="image"/>
