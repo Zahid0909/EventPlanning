@@ -5,7 +5,7 @@
             <div class="col-span-2 sm:col-span-6">
                 <x-label for="image" :value="__('Image')" />
                 <x-input id="image" type="file" class="block mt-1 w-full" wire:model="image"/>
-                <x-input-error for= "image" class="mt-2"/>
+                <x-input-error for="image" class="mt-2"/>
             </div>
 
             <div class="col-span-3">
@@ -25,7 +25,7 @@
             <div class="col-span-2 sm:col-span-3">
                     <x-label for="event_name" :value="__('Event Name')" />
                     <x-input id="event_name" type="text" class="block mt-1 w-full" wire:model="event.event_name"/>
-                    <x-input-error for= "name" class="mt-2"/>
+                    <x-input-error for= "event.event_name" class="mt-2"/>
             </div>
 
             <div class="col-span-2 sm:col-span-6">

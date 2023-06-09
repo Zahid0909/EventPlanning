@@ -17,4 +17,9 @@ class Category extends Model implements HasMedia
         'name',
         'description',
     ];
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
 }

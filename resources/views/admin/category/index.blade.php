@@ -31,11 +31,16 @@
                                         <x-td>{{ $category->description }}</x-td>
                                         <x-td class="justify-center">
                                             <a href="{{ route('admin.category.edit', $category->id) }}" class="text-indigo-600 hover:text-indigo-900 mr-3">Edit</a>
+                                            @if ($category->events()->exists())
+                                            <button disabled class="text-indigo-600 hover:text-indigo-900 cursor-not-allowed">Delete</button>
+                                            {{-- <p class="text-red-500">This category is referenced in events and cannot be deleted.</p> --}}
+                                            @else
                                             <form class="inline-block" action="{{ route('admin.category.destroy', $category) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this event?')">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="text-indigo-600 hover:text-indigo-900">Delete</button>
                                             </form>
+                                            @endif
                                         </x-td>
                                     </x-tr>
                                 @endforeach

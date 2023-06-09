@@ -35,6 +35,30 @@
             </div>
             <div class="p-6 border-b">
                 <h2 class="text-2xl ">
+                    Event Analytics
+                </h2>
+            </div>
+
+            <div
+                class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
+                <p class="text-gray-600">
+                    Number of Views
+                </p>
+                <p>
+                     {{ $event->view_count }}
+                </p>
+            </div>
+            <div
+                class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 pt-6 border-b">
+                <p class="text-gray-600">
+                    Number of Reserved Users
+                </p>
+                <p>
+                     {{ $event->subscription_count }}
+                </p>
+            </div>
+            <div class="p-6 border-b">
+                <h2 class="text-2xl ">
                     Information
                 </h2>
                 <p class="text-sm text-gray-500">

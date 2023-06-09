@@ -31,6 +31,8 @@ return new class extends Migration
             $table->string('website')->nullable();
             $table->string('image')->nullable();
             $table->string('category_name')->nullable();
+            $table->unsignedInteger('view_count')->default(0);
+            $table->unsignedInteger('subscription_count')->default(0);
 
 
             $table->timestamps();
@@ -44,4 +46,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('events');
     }
+
+
 };

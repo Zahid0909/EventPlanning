@@ -17,9 +17,6 @@ class EventForm extends Component
 
     public $image;
 
-
-
-
     protected $rules = [
         'event.category_id' => 'required',
         'event.event_name' => 'required',
@@ -54,8 +51,6 @@ class EventForm extends Component
 
             $this->event->addMedia($this->image->getRealPath())->toMediaCollection('image');
         }
-
-
 
         return redirect()->route('admin.events.index');
 

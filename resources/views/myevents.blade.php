@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Home') }}
+            {{ __('My Events') }}
         </h2>
     </x-slot>
 
@@ -10,12 +10,15 @@
 
             <div class="grid grid-cols-4 gap-6">
 
-                @foreach ($events as $event )
-                @livewire('event-card',[
-                    'event' => $event,
-                ])
-                @endforeach
+                @forelse ($events as $event)
+                    @livewire('event-card', [
+                        'event' => $event
+                    ])
+                @empty
+                    <p>No events Registered</p>
+                @endforelse
             </div>
+
         </div>
       </div>
 </x-app-layout>

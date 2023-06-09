@@ -27,7 +27,7 @@
                 <x-table class="flex justify-start">
                     <x-slot name="head">
                         <x-th>Event Name</x-th>
-                        <x-th>Image</x-th>
+                        <x-th class=" w-20">Image</x-th>
                         <x-th>Category</x-th>
                         <x-th>Venue</x-th>
                         <x-th>Address</x-th>
@@ -41,7 +41,7 @@
                         @foreach ($events as $event)
                             <x-tr>
                                 <x-td>{{ $event->event_name }}</x-td>
-                                <x-td>
+                                <x-td class=" w-20">
                                     @if ($event->hasMedia('image'))
                                         <img src="{{ $event->getFirstMediaUrl('image') }}" alt="{{ $event->event_name }}"/>
                                     @else
